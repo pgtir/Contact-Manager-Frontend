@@ -15,7 +15,6 @@ const TagsGroupsModal = ({icon, id, arrayNames, modalFor, onClose}) => {
     color: "#fff",
   }));
   const dispatch = useDispatch();
-console.log(arrayNames)
 const {myData, isLoading} = useSelector(
     (state) => state.user
   )
@@ -23,7 +22,6 @@ const {myData, isLoading} = useSelector(
     let contactData;
     if(modalFor === "tags") contactData = { $pull: { "tagNames": name } }
     if(modalFor === "groups") contactData = { $pull: { "groupNames": name } }
-    // console.log(id, contactData)
     dispatch(updateContact({id, contactData}))
    }
   return (

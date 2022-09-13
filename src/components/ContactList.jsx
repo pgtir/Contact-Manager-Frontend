@@ -70,14 +70,11 @@ function ContactList({ selectedIds, dispatch, pageType, searchText}) {
   }
 
   function handleCheckbox(e) {
-    console.log(e.target.checked)
     if (e.target.checked) {
       selectedIds.push(e.target.id);
-      console.log(selectedIds)
     }
     else {
       const index = selectedIds.indexOf(e.target.id);
-      console.log(index)
       selectedIds.splice(index, 1);
     }
   }

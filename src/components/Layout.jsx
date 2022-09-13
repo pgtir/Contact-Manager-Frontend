@@ -42,7 +42,6 @@ const Layout = (props) => {
     setMobileOpen(!mobileOpen);
   };
    const [active, setActive] = useState("none")
-   console.log(active)
   const menuList = [
     {
      title: "CATEGORIES",

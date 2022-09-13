@@ -30,7 +30,6 @@ const [image, setFile] = useState("");
 const handleFileChange = ({ target }) => {
   setFileData(target.files[0])
   setFile(target.value)
-  console.log(target.files[0])
   formik.values.image = target.value
 }
   return (

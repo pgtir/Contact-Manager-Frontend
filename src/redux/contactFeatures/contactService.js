@@ -48,14 +48,11 @@ const updateMany = async (selectedIds, contactData, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  console.log(selectedIds, "heyyservuce")
-  console.log(contactData, "heyyservuce")
   const response = await axios.patch(
     API_URL + "updateMany/" + selectedIds,
     contactData,
     config
   );
-  console.log(response.data)
   // return response.data
 };
 // Edit many
@@ -66,7 +63,6 @@ const updateContact = async (contactId, contactData, token) => {
     },
   };
   const response = await axios.patch(API_URL + contactId, contactData, config);
-   console.log(response.data);
   return response.data;
 };
 
@@ -78,7 +74,6 @@ const loadCurrentContact = async (contactId, token) => {
     },
   };
   const response = await axios.get(API_URL + contactId, config);
-  console.log(response.data)
   return response.data;
 };
 

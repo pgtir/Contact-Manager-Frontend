@@ -9,7 +9,6 @@ import ContactForm from './ContactForm';
 
 const CreateContact = ({onClose, isNewContact}) => {
     const {pageType} = useParams();
-    console.log(pageType)
     const [fileData, setFileData] = useState("")
     const dispatch = useDispatch();
     const {currentContact,currentGroup, currentTag, isSuccess, isError, message} = useSelector(
@@ -17,7 +16,6 @@ const CreateContact = ({onClose, isNewContact}) => {
     )
 
     const navigate = useNavigate();
-    console.log("isError",isError)
     const INITIAL_FORM_STATE = {
         name: `${isNewContact? "": ((currentContact && currentContact.name) ? currentContact.name : "")}`,
         description: `${isNewContact? "": ((currentContact && currentContact.description)? currentContact.description : "")}`,
@@ -41,7 +39,6 @@ const CreateContact = ({onClose, isNewContact}) => {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-          console.log("submitted")
           // alert(JSON.stringify(values, null, 2));
           let contactData = new FormData();
           contactData.append("name", values.name);
@@ -55,7 +52,6 @@ const CreateContact = ({onClose, isNewContact}) => {
           contactData.append("image", fileData);
           
           if(isNewContact) {
-            console.log(contactData)
             dispatch(createContact(contactData))
             navigate("/contacts/all")
             if(pageType === "all")

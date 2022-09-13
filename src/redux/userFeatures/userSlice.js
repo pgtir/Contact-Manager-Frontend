@@ -65,7 +65,6 @@ export const updateMe = createAsyncThunk(
           state.isLoading = false
           state.isSuccess = true
           state.myData = action.payload.user
-          console.log(state.myData)
         })
         .addCase(getMe.rejected, (state, action) => {
           state.isLoading = false
@@ -86,9 +85,7 @@ export const updateMe = createAsyncThunk(
           state.message = action.payload
         })
         .addCase(updateContact.fulfilled, (state, action) => {
-          console.log(action.payload.updatedContact)
           state.starred_count += 2
-          console.log(state.starred_count)
         })
     },
   })

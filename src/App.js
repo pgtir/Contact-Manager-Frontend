@@ -5,17 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import SignupPage from './pages/Signup'
 import LoginPage from './pages/Login'
 import HomePage from './pages/Home'
-import SettingsPage from './pages/Settings'
 import ContactsPage from './pages/Contacts'
 import { useDispatch } from 'react-redux'
 import { getMe } from './redux/userFeatures/userSlice'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-// localStorage.removeItem('user')
 
 function App() {
-  // const dispatch = useDispatch()
-  // dispatch(getMe())
   return (
     <div className="App">
       <Router>
@@ -27,7 +23,6 @@ function App() {
           <Route path='/contacts/:pageType' element={<ContactsPage/>}></Route>
           <Route path='/tags/:pageType' element={<ContactsPage/>}></Route>
           <Route path='/groups/:pageType' element={<ContactsPage/>}></Route>
-          <Route path='/settings' element={<SettingsPage/>}></Route>
         </Routes>
       </Router>
       <ToastContainer />

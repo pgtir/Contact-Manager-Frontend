@@ -19,7 +19,6 @@ const initialState = {
 export const createContact = createAsyncThunk(
     'contacts/create',
     async (contactData, thunkAPI) => {
-      console.log("ssli", contactData)
       try {
         const token = thunkAPI.getState().auth.user.token
         return await contactService.createContact(contactData, token)
@@ -30,7 +29,6 @@ export const createContact = createAsyncThunk(
             error.response.data.message) ||
           error.message ||
           error.toString()
-          console.log(error)
         return thunkAPI.rejectWithValue(message)
       }
     }
@@ -94,7 +92,6 @@ export const deleteContact = createAsyncThunk(
 export const updateContact = createAsyncThunk(
     'contacts/edit',
     async ({id, contactData}, thunkAPI) => {
-      console.log("slice", id)
       try {
         const token = thunkAPI.getState().auth.user.token
         return await contactService.updateContact(id, contactData, token)
@@ -105,7 +102,6 @@ export const updateContact = createAsyncThunk(
             error.response.data.message) ||
           error.message ||
           error.toString()
-          console.log(message)
         return thunkAPI.rejectWithValue(message)
       }
     }

@@ -37,7 +37,6 @@ const UploadModal = ({modalFor, onClose, id}) => {
       if(modalFor === 'contact') {
         const contactData = new FormData();
         contactData.append("image", fileData);
-        // console.log(id, contactData)
         dispatch(updateContact({id, contactData}))
       }
       onClose();
@@ -47,7 +46,6 @@ const UploadModal = ({modalFor, onClose, id}) => {
   const handleFileChange = ({ target }) => {
     setFileData(target.files[0])
     setFile(target.value)
-    console.log(target.files[0])
     formik.values.image = target.value
   }
   return (

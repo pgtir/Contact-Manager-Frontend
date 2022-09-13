@@ -27,7 +27,6 @@ const AddToTag = ({selectedIds, onClose}) => {
       const index = checkedItems.indexOf(e.target.id);
       checkedItems.splice(index, 1);
     }
-    console.log(checkedItems)
   }
   function handleAdd() {
     if(checkedItems.length > 0) {

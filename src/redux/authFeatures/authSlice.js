@@ -93,7 +93,6 @@ export const authSlice = createSlice({
       .addCase(logout.fulfilled, (state) => {
         state.user = null
         state.isLoggedOut = true
-        console.log(state.user)
       })
   },
 })
