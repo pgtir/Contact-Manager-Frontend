@@ -6,8 +6,6 @@ import SignupPage from './pages/Signup'
 import LoginPage from './pages/Login'
 import HomePage from './pages/Home'
 import ContactsPage from './pages/Contacts'
-import { useDispatch } from 'react-redux'
-import { getMe } from './redux/userFeatures/userSlice'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
